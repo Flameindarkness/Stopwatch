@@ -54,6 +54,16 @@ class MainActivity : AppCompatActivity() {
             offset = 0
             setBaseTime()
         }
+        val resetstartButton = findViewById<Button>(R.id.reset_start_button)
+        resetstartButton.setOnClickListener {
+            offset = 0
+            setBaseTime()
+            if (!running) {
+                setBaseTime()
+                stopwatch.start()
+                running = true
+            }
+        }
     }
 
     //    override fun onStop() {
